@@ -1,0 +1,361 @@
+/* Root Variables */
+:root {
+    --txt-color: black;
+    --second-txt-color: white;
+    --bg-color: white;
+    --third-bg-color: black;
+    --second-bg-color: rgba(255, 255, 255);
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px 50px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Logo */
+.triprotect {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    left: 90px;
+}
+
+.triprotect img {
+    width: 55px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.tri {
+    font-weight: bold;
+    color: var(--txt-color);
+}
+
+.protect {
+    font-weight: bold;
+    -webkit-text-stroke: 1px black;
+    color: var(--second-txt-color);
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    right: 150px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--txt-color);
+    font-size: 18px;
+    transition: transform 0.3s ease-in, color 0.3s ease-out;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--txt-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar a:hover {
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+#menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Buttons */
+.button-login, .button-r, .button-c {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.button-login {
+    background: var(--third-bg-color);
+    color: var(--second-txt-color);
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.button-login:hover, .button-r:hover {
+    background: rgba(255, 255, 255, 0.336);
+    color: var(--txt-color);
+}
+
+.button-r {
+    background-color: var(--third-bg-color);
+    color: var(--second-txt-color);
+}
+
+.button-c {
+    background: transparent;
+    color: var(--txt-color);
+}
+
+.button-c:hover {
+    background: var(--txt-color);
+    color: var(--second-txt-color);
+}
+
+/* Home Section */
+#home {
+    padding: 100px 50px 30px;
+    text-align: center;
+}
+
+#home h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+#home p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+#home .content {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 10%; /* Adjust positioning */
+}
+#home .content .text {
+    max-width: 550px; /* Control width for better readability */
+    text-align: left;
+}
+#home .content .text {
+    transform: translateX(30px); /* Moves the section 30px to the right */
+}
+#home .content img {
+    position: relative;
+    top: 15px; /* Moves it down */
+    left: 25px;
+}
+/* Footer */
+footer {
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 568px) {
+    .navbar{
+        display: none;
+    }
+    .triprotect{
+        position: relative;
+        left: 15px;
+    }
+    #menu-icon {
+        display: block;
+        position: relative;
+        right: 80px;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+    }
+
+    #home .content img {
+        order: -1; /* Move the image above the text */
+        max-width: 100%; /* Adjust width for responsiveness */
+        height: auto;
+        position: static; /* Remove positioning that might offset centering */
+    }
+
+    #home .content .text {
+        text-align: center;
+        transform: none; /* Remove unnecessary translation */
+    }
+}
+@media screen and (max-width: 667px) {
+    .navbar{
+        display: none;
+    }
+    .triprotect{
+        position: relative;
+        left: 15px;
+    }
+    #menu-icon {
+        display: block;
+        position: relative;
+        right: 80px;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+    }
+
+    #home .content img {
+        order: -1; /* Move the image above the text */
+        max-width: 100%; /* Adjust width for responsiveness */
+        height: auto;
+        position: static; /* Remove positioning that might offset centering */
+    }
+
+    #home .content .text {
+        text-align: center;
+        transform: none; /* Remove unnecessary translation */
+    }
+}
+@media screen and (max-width: 768px) {
+    .navbar{
+        display: none;
+    }
+    .triprotect{
+        position: relative;
+        left: 15px;
+    }
+    #menu-icon {
+        display: block;
+        position: relative;
+        right: 80px;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+    }
+
+    #home .content img {
+        order: -1; /* Move the image above the text */
+        max-width: 100%; /* Adjust width for responsiveness */
+        height: auto;
+        position: static; /* Remove positioning that might offset centering */
+    }
+
+    #home .content .text {
+        text-align: center;
+        transform: none; /* Remove unnecessary translation */
+    }
+}
+@media screen and (max-width: 900px) {
+    .navbar{
+        display: none;
+    }
+    .triprotect{
+        position: relative;
+        left: 15px;
+    }
+    #menu-icon {
+        display: block;
+        position: relative;
+        right: 80px;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+    }
+
+    #home .content img {
+        order: -1; /* Move the image above the text */
+        max-width: 100%; /* Adjust width for responsiveness */
+        height: auto;
+        position: static; /* Remove positioning that might offset centering */
+    }
+
+    #home .content .text {
+        text-align: center;
+        transform: none; /* Remove unnecessary translation */
+    }
+}
+@media screen and (max-width: 1050px) {
+    .navbar{
+        display: none;
+    }
+    .triprotect{
+        position: relative;
+        left: 15px;
+    }
+    #menu-icon {
+        display: block;
+        position: relative;
+        right: 80px;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+    }
+
+    #home .content img {
+        order: -1; /* Move the image above the text */
+        max-width: 100%; /* Adjust width for responsiveness */
+        height: auto;
+        position: static; /* Remove positioning that might offset centering */
+    }
+
+    #home .content .text {
+        text-align: center;
+        transform: none; /* Remove unnecessary translation */
+    }
+}
